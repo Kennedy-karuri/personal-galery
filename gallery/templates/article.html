@@ -1,0 +1,46 @@
+{%extends 'all-photos/base.html'%}
+
+{% block content %}
+
+<div class="page">
+
+<div class="col-md-4 mt-5">
+  <div class="row">
+    <h1 class="text-center">{{article.title}}</h1>
+  </div>
+
+  <img  src="{{article.article_image.url}}" class="image-responsive w-100 img-thumbnail btn-outline-info"
+    data-toggle="modal" data-target="#{{article.id}}" alt="image">
+
+  <div class="container">
+    <p>{{article.description}}</p>
+    <p>Location taken ~ {{article.location}}</p>
+    <p>Category ~ {{article.caption}}</p>
+    <p>Posted {{article.pub_date|timesince}} ago </p>
+
+  </div>
+  <div class="modal-footer">
+    <p>{{pic.author}}</p>
+    <a href="{{ article.article_image.url }}"> <input class="form-control" type="text" value="{{ article.article_image.url }}" id="link"></a>
+    <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy
+        Link</button></a>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+
+<style>
+  body{
+    background-image: url(/media/articles/aaaa.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+ p{
+   font-style: italic;
+   font-weight: bolder;
+   font-size: 20px;
+ }
+  
+</style>
+
+  {% endblock %}
