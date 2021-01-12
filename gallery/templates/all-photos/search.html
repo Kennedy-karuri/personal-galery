@@ -1,0 +1,45 @@
+{%extends 'all-photos/base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if articles%}
+      <h2>Found {{ articles|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 articles for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if articles %}
+    {% for article in articles %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{article.title}}</h1>
+
+          <img src="{{article.article_image.url}}" alt="img" width="250px" height="250px">
+          <br>
+          <button>
+            <a  class="btn btn-primary" href="/article/{{article.id}}">MORE</a>
+          </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+
+<style>
+  body{
+    background-image: url(/media/articles/aaaa.jpeg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+  }
+
+  h1{
+    text-align: center;
+  }
+</style>
+{% endblock %}
