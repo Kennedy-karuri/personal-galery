@@ -25,7 +25,7 @@ Ken's Photo-Gallery is an admin managed page that allows the user to visit and v
 
 * $ Open Terminal ( Ctrl Alt T)
 * $ git clone link
-* $ cd directory-name(Blog)
+* $ cd directory-name(personal-gallery)
 * $ code .
   
 ## Support and contacts
